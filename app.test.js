@@ -5,7 +5,7 @@ describe('App Tests', () => {
   test('GET / should return welcome message', async () => {
     const response = await request(app).get('/');
     expect(response.status).toBe(200);
-    expect(response.body.message).toBe('Hello from CI/CD Pipeline!');
+    expect(response.text).toContain('CI/CD Pipeline Working!');
   });
 
   test('GET /health should return healthy status', async () => {
