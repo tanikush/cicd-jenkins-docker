@@ -112,6 +112,23 @@ test-app.bat
 | `/` | GET | Application status and info |
 | `/health` | GET | Health check endpoint |
 
+### 📱 Application Screenshots
+
+#### Homepage
+![App Homepage](screenshots/app-homepage.png)
+
+#### Health Check
+![Health Check](screenshots/app-health.png)
+
+### 🔧 Jenkins Dashboard
+![Jenkins Dashboard](screenshots/jenkins-dashboard.png)
+
+### 📊 Pipeline Execution
+![Pipeline Build](screenshots/jenkins-pipeline.png)
+
+### 🐳 Docker Containers
+![Docker Containers](screenshots/docker-containers.png)
+
 ## 📈 Monitoring & Logging
 
 - **Container Health**: Real-time status monitoring
