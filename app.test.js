@@ -13,4 +13,8 @@ describe('App Tests', () => {
     expect(response.status).toBe(200);
     expect(response.body.status).toBe('healthy');
   });
+
+  afterAll(() => {
+    // Clean up any open handles
+  });
 });

@@ -16,8 +16,10 @@ app.get('/health', (req, res) => {
   res.json({ status: 'healthy', port: port, time: new Date().toISOString() });
 });
 
-app.listen(port, '0.0.0.0', () => {
-  console.log(`🚀 Server running on http://localhost:${port}`);
-});
+if (require.main === module) {
+  app.listen(port, '0.0.0.0', () => {
+    console.log(`🚀 Server running on http://localhost:${port}`);
+  });
+}
 
 module.exports = app;
