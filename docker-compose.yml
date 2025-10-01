@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+    container_name: cicd-app
+    networks:
+      - cicd-network
+    
+  jenkins:
+    image: jenkins/jenkins:lts
+    ports:
+      - "9090:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins_home:/var/jenkins_home
+    environment:
+      - JAVA_OPTS=-Djenkins.install.runSetupWizard=false
+    container_name: cicd-jenkins
+    user: root
+    networks:
+      - cicd-network
+
+volumes:
+  jenkins_home:
+
+networks:
+  cicd-network:
+    driver: bridge
